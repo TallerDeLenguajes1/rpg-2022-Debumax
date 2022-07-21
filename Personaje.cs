@@ -1,13 +1,13 @@
 class Personaje
 {
-    private Caracteristicas Caract;
-    private Datos Dat;
+    private Caracteristicas caract;
+    private Datos dat;
 
-    internal Datos Dat1 { get => Dat; set => Dat = value; }
-    internal Caracteristicas Caract1 { get => Caract; set => Caract = value; }
+    internal Datos Datos { get => dat; }
+    internal Caracteristicas Caracteristicas { get => caract; }
     public Personaje(){
-        Caract1=new Caracteristicas();
-        Dat1=new Datos();
+        caract=new Caracteristicas();
+        dat=new Datos();
     }
 
 }
