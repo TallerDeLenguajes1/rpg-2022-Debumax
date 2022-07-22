@@ -17,7 +17,7 @@ class Datos
     public string? Descripcion { get => descripcion; set => descripcion = value; }
 
     public Datos(){
-        ManejoDeArchivos mda = new ManejoDeArchivos();
+        ApiHeroes mda = new ApiHeroes();
         mda.CraeArchivoJson();
         List<Heroe> hrs=mda.heroes();//listado de heroes sacsados del json , creo listado de los heroes para luego filtrarlos 
         List<HeroesFiltrados> heroesMujeres;
@@ -44,4 +44,8 @@ class Datos
         Console.WriteLine($"Salud: {Salud}");
 
     }
+    public int ModificaSalud(int danio){
+        Salud=Salud-danio;
+        return Salud;
+    } 
 }

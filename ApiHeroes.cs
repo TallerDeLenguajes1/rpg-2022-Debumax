@@ -1,7 +1,7 @@
 using System.Net;
 using System.Text.Json;
 
-class ManejoDeArchivos
+class ApiHeroes
 {
 
     private string creaAllJsonHeroes(){
