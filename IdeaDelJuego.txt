@@ -2,4 +2,4 @@ siempre seran 8 participantes de los cuales por cada ronda se iran eliminando lo
 el orden de las peles se rigen segun el orden del sorteo.
 hasta el momento la forma de eliminacion parte del que hizo mas daño
 queara un historial de las eliminaciones
-
+la pelea es automatica

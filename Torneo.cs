@@ -20,4 +20,33 @@ class Torneo
         return nuevoListado;
 
     }
+    public void MuestraGanadoresDeRonda(List<Personaje> listaParticipantes){
+        
+        foreach (Personaje pj in listaParticipantes)
+        {
+            pj.Dat.MostrarDatos();
+            pj.Caract.MostrarCaracteristicas();
+            Console.WriteLine("\n");
+        }
+    }
+
+    public List<Personaje> ParticipantesOriginales(List<Personaje> participantesCopia){
+        List<Personaje> listaGanadoraPrimeraRondaOriginal=new List<Personaje>();//info original de los ganadores
+
+        foreach (var participante in participantesCopia)
+        {
+            string? fullname=participante.Dat.Nombre;
+            foreach (var ganador in participantesCopia)
+            {
+                if (fullname==ganador.Dat.Nombre)
+                {
+                    listaGanadoraPrimeraRondaOriginal.Add(participante);
+                }
+            }
+
+        }
+        return listaGanadoraPrimeraRondaOriginal;
+
+    }
+
 }
