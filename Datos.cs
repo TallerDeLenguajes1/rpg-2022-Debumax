@@ -31,7 +31,7 @@ class Datos
         Apodo=heroesMujeres[index].Apodo;
         descripcion=heroesMujeres[index].Descripcion;
         
-        Fecha_Nac=new DateTime(rand.Next(1722,2023),rand.Next(1,13),rand.Next(1,31));
+        Fecha_Nac=new DateTime(Convert.ToInt32( rand.Next(1722,2023)),Convert.ToInt32(rand.Next(1,13)),Convert.ToInt32(rand.Next(1,31)));
         Edad=DateTime.Today.AddTicks(-fecha_Nac.Ticks).Year - 1;
         Salud = rand.Next(1,101);
     }

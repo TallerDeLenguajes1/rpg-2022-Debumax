@@ -14,7 +14,7 @@ class ManejoDeArchivo
                 openArchivoJson.Close();
             }
         }
-        List<Personaje>? listaDelJson = JsonSerializer.Deserialize<List<Personaje>>(archivoJson); // lo convierto en la lista de productos
+        List<Personaje> listaDelJson = JsonSerializer.Deserialize<List<Personaje>>(archivoJson); // lo convierto en la lista de productos
         return listaDelJson;
     }
 
