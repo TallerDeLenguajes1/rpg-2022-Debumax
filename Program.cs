@@ -20,7 +20,7 @@ Console.WriteLine("-----------!!!!!! Ganador primera Ronda \n");
 List<Personaje> ganadoresPrimeraRonda=new List<Personaje>();
 ganadoresPrimeraRonda =T1.eliminaciones(participantesCopia);//ganadores de ronda
 List<Personaje> listaGanadoraPrimeraRondaOriginal;
-listaGanadoraPrimeraRondaOriginal =T1.ParticipantesOriginales(ganadoresPrimeraRonda);
+listaGanadoraPrimeraRondaOriginal =T1.ParticipantesOriginales(participantes,ganadoresPrimeraRonda);
 T1.MuestraGanadoresDeRonda(listaGanadoraPrimeraRondaOriginal);
 
 
@@ -37,9 +37,21 @@ List<Personaje> listaSegundaRonda=ParticipantesSegundaRondajson.leerArchivoJsonP
 List<Personaje> ganadoresSegundaRonda=new List<Personaje>();
 ganadoresSegundaRonda =T1.eliminaciones(listaSegundaRonda);
 List<Personaje> ganadoresSegundaRondaOriginales =new List<Personaje>();
-ganadoresSegundaRondaOriginales =T1.ParticipantesOriginales(ganadoresSegundaRonda);
+ganadoresSegundaRondaOriginales =T1.ParticipantesOriginales(participantes,ganadoresSegundaRonda);
 T1.MuestraGanadoresDeRonda(ganadoresSegundaRondaOriginales);
 
+//final
 
+Console.WriteLine(" Final !!!!!!! \n");
+ManejoDeArchivo ParticipantesTerceraRondajson= new ManejoDeArchivo();
 
+//creo archivo de los participantes que quedaron de la 2da ronda
+ParticipantesTerceraRondajson.creaJsonParticipantes(ganadoresSegundaRondaOriginales,"Final.json");//2 participantes
+List<Personaje> listaTerceraRonda=ParticipantesTerceraRondajson.leerArchivoJsonParticipantes("Final.json");
+//pelea y ganadores de Final
 
+List<Personaje>ganadorFinal=new List<Personaje>();
+ganadorFinal =T1.eliminaciones(listaTerceraRonda);
+List<Personaje> GanadorOriginal =new List<Personaje>();
+GanadorOriginal =T1.ParticipantesOriginales(participantes,ganadorFinal);
+T1.MuestraGanadoresDeRonda(GanadorOriginal);

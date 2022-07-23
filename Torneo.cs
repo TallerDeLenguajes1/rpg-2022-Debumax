@@ -30,22 +30,22 @@ class Torneo
         }
     }
 
-    public List<Personaje> ParticipantesOriginales(List<Personaje> participantesCopia){
-        List<Personaje> listaGanadoraPrimeraRondaOriginal=new List<Personaje>();//info original de los ganadores
+    public List<Personaje> ParticipantesOriginales(List<Personaje> participantesoriginales,List<Personaje> participantesGanadores){
+        List<Personaje> listaGanadoraRondaOriginal=new List<Personaje>();//info original de los ganadores
 
-        foreach (var participante in participantesCopia)
+        foreach (var participante in participantesGanadores)
         {
             string? fullname=participante.Dat.Nombre;
-            foreach (var ganador in participantesCopia)
+            foreach (var ganador in participantesoriginales)
             {
                 if (fullname==ganador.Dat.Nombre)
                 {
-                    listaGanadoraPrimeraRondaOriginal.Add(participante);
+                    listaGanadoraRondaOriginal.Add(ganador);
                 }
             }
 
         }
-        return listaGanadoraPrimeraRondaOriginal;
+        return listaGanadoraRondaOriginal;
 
     }
 
